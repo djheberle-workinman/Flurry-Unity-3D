@@ -15,7 +15,7 @@ private void Start()
 {
     // For Flurry Android only:
     FlurryAndroid.SetLogEnabled(true);
-    
+
     // For Flurry iOS only:
     FlurryIOS.SetDebugLogEnabled(true);
 
@@ -31,16 +31,28 @@ See TestScene.unity for more details.
 ### Installation
 
 ####Android:
-Due to Google restrictions, under Plugins/Android you can find Google Play Games library that is required for proper working of Flurry for Android. Feel free to replace that library with your existing Google Play Games implementation.
+
+In order to implement this plugin, you will need to include Google Play Analytics Services API. Using a Unity project that builds via Gradle, add the following to your Gradle build file:
+
+```
+dependencies {
+    compile 'com.google.android.gms:play-services-analytics:11.0.4'
+}
+```
+
+In Android Studio SDK Manager, make sure your Google Play Games Services SDK is updated, along with the Google Repository.
+
+If you are already using Google Play Games Services, this API is included, but you may run into dex overflow issues when you build. To solve this issue, you will need to compile only the packages you need independently via Gradle (as recommended above with Analytics).
+
+In the Google Play Developer Console,
 
  * generate unique app id in Google Developer Console under Game Services tab.
  * replace 'APP_ID' field in AndroidMainfest.xml to your existing app id value:
- 
+
  ```
 <meta-data android:name="com.google.android.gms.games.APP_ID" android:value="\ APP_ID" />
  ```
  * set proper package name in Unity project settings.
- 
 ####iOS:
  * Add Security.framework
 
