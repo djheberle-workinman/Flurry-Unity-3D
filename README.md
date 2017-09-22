@@ -30,7 +30,7 @@ See TestScene.unity for more details.
 
 ### Installation
 
-####Android:
+#### Android:
 
 In order to implement this plugin, you will need to include Google Play Analytics Services API. Using a Unity project that builds via Gradle, add the following to your Gradle build file:
 
@@ -53,7 +53,9 @@ In the Google Play Developer Console,
 <meta-data android:name="com.google.android.gms.games.APP_ID" android:value="\ APP_ID" />
  ```
  * set proper package name in Unity project settings.
-####iOS:
+ 
+#### iOS:
+
  * Add Security.framework
 
 ### Version
